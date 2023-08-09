@@ -1,0 +1,367 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+#pagina{/*EL PRIMER DIV QUE ENCIERRA TODO*/
+    background-color: black;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns:200px auto;
+    grid-template-rows: 60px 50px auto;
+    grid-template-areas:"nav nav"
+                        "menu etiquetas"
+                        "menu contenido";
+    
+}
+
+
+
+/*GRID AREAS DE #PAGINA*/
+/*menu lateral*/
+
+#etiquetas{/*seccion de los targs*/
+    background-color:  rgb(14, 12, 14);
+    grid-area: etiquetas;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#etiquetas a{/*propiedades de los tags etqietas <a>*/
+    background: #383535;
+    padding: 7px 8px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none; 
+    margin-left: 10px;
+    font-size: 11px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+#etiquetas button{/*boton > en los tags*/
+    background: none;
+    border: none;
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;   
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+#etiquetas button:hover{/*hover del boton > */
+    background-color: #383535;
+    cursor: pointer;
+}
+
+
+
+/* SECCION DEL MENU LATERAL*/
+#menu{
+    background-color: rgb(14, 12, 14);
+    grid-area: menu;
+    margin-right: 0;
+    overflow-y: scroll;
+    position: fixed;
+    height: 90vh;
+    margin-top:65px ;
+    scrollbar-width: 2px;
+    width: 200px;
+
+}
+#menu::-webkit-scrollbar{
+    width: 7px;
+    
+}
+#menu:hover{
+    cursor: pointer;
+}
+#menu::-webkit-scrollbar-thumb:hover{
+    background-color: #888181;
+    border-radius: 5px;
+}
+label{
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    right: 20px;
+    z-index:1;
+    padding:6px;
+    font-size: 17px;
+    color: aliceblue;
+}
+
+#menu hr{/* hr que separa los menu*/
+    margin: 10px 0;
+    border: 0.5px solid rgb(32, 31, 31);
+}
+
+.div1 a{/*DENTRO DE ESTE, ESTA EL ul Y LOS li*/
+        display: block;
+        padding: 4px 20px;
+        margin-bottom: 8px;
+        color: rgb(238, 235, 235);
+        text-decoration: none;
+}
+li{/*lista de las subscripciones*/
+    padding: 10px 5px;
+    border-radius: 8px;
+    margin-right: 0;
+    font-size: 13px;  
+}
+
+.sub{/*imagen de las subscripciones*/
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    margin-right: 20px; 
+}    
+.subs{
+    display: flex;
+    align-items: center;
+}
+.div1 li:hover{
+    background: #383535;   
+}
+.div1 a ul{
+       list-style: none;
+       font-family: 'Roboto', sans-serif;    
+}
+.div1 i{
+    margin-right: 20px;
+}
+
+/*HASTA AQUI LA  SECCION DEL MENU LATERAL*/
+
+
+/*SECCION GENERAL DE LOS VIDEOS*/
+#contenido{/*seccion de Videos*/
+    background-color:   rgb(14, 12, 14);
+    grid-area: contenido;
+    padding: 0 10px;  
+
+}
+
+#contenido .titulo{/*propiedades de la etiqueta p para el titulo*/
+    color:rgb(99, 105, 110);
+    font-family: 'Noto Sans Gothic', sans-serif;
+    font-size: 14px;
+    
+    
+}
+.img-video{/*miniaturas de los videos*/
+    height: 35px;
+    width: 35px;
+    border-radius: 100px;
+    margin-right: 10px;
+}
+section .titulo{/*titulos de los videos*/
+    display: flex;
+    flex-direction: row;
+    margin-top:5px ;
+}
+section .visualizacion{/*canal y visualizaciones*/
+    font-size: 12px;
+   margin-left: 50px ;
+   margin-top: 5px;
+}
+
+
+#videos{
+    grid-gap: 40px 40px;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#videos .caja-video{
+        width: 100%;
+    
+}
+#videos .caja-video img{/*medidas de la imagen miniatura*/
+    height: 190px;
+    width: 320px;
+    border-radius: 10px;
+    
+}
+.series{
+    margin-top: 15px;
+    padding: 7px;
+    color: #c5bdbd;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif; 
+}
+
+#barra-navegacion{/*PROPIEDADES DEL NAV BARRA DE NAVEGACION GRID AREA: NAV*/
+    background-color:  rgb(14, 12, 14);
+    grid-area: nav;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns:auto 1fr auto;  
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 15px;
+    grid-template-areas: "logo busqueda icono";
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    height: 10%;
+
+}
+#logo{/*LOGO PARA COLOCARLO AL LADO DE YOUTUBE*/
+    display: flex;
+    flex-direction: row;
+    color: white;
+    margin-left: 40px;
+}
+
+/*GRID AREAS*/
+#logo{
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+}
+
+
+
+#busqueda{/*algunas propiedad de la barra de busqueda para CENTRAR*/
+    grid-area: busqueda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#busqueda input{/*  BARRA DE BUSQUEDA*/
+    width: 55%;
+    height: 37px;
+    padding: 0 20px;
+    border-radius: 100px 0 0 100px  ;
+    background-color: rgb(15, 14, 14);
+    border: 1px solid #383535;
+    font-size: 15px;
+    color: rgb(206, 192, 192);
+    
+}
+
+#busqueda input:hover{/*barra de busqueda-pasar el cursor por encima y cambia*/
+    border: blue;
+}
+#busqueda button.buscar {/*BOTON DE LA BARRA DE BUSQUEDA*/
+    height: 40px;
+    border-radius: 0 40px 40px 0;
+    border: 1px  #c5bdbd;
+    padding: 5px 25px; 
+    background: #1a1919;
+    color:rgb(206, 192, 192);
+    font-size: medium;
+    cursor: pointer;  
+}
+
+#busqueda button.microfono {/*BOTON DE MICROFONO*/
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    background: #1a1919;
+    color:rgb(206, 192, 192);
+    border: 1px  #c5bdbd;
+    padding: 5px 5px;
+    margin-left: 20px;
+    font-size: 17px;
+     
+}
+#busqueda button.microfono:hover{
+    background-color: #2e2a2a;
+    cursor: pointer;
+}
+
+
+#icono{/*BOTONES DE DESCARGA Y CAMPANITA*/
+    grid-area: icono;
+    display: flex;
+    align-items: center;
+}
+
+#icono button{/*estilo de los iconos*/
+    background: none;
+    border: none;
+    font-size: 17px;
+    color: white;
+    padding: 8px 8px;
+    margin-right: 13px;
+    cursor: pointer;
+    border-radius: 100px;
+    height: 45px;
+    width: 45px;
+}
+
+#icono button:hover{
+    background-color: #383535;
+}
+
+/*PROPIEDADES PARA EL ICONO DE MENU*/
+#b-menu{
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: #c5bdbd;
+    
+}
+#b-menu:hover{
+    background: #383535;
+}
+ #boton-menu{
+   
+   position: absolute;
+    
+}
+
+.icono-play{/*ICONO DE YOUTUBE*/
+    background-color: red;
+    padding: 4px 10px;
+    border-radius: 3px;
+    color: white;
+    font-size: 8px;
+    margin-right: 2px;
+    
+    height: 16px;
+    width: 25px;
+}
+
+#youtube{/*FUENTE DE LETRA DE LA PALABRA YOUTUBE*/
+    font-family: 'League Gothic', sans-serif;
+    font-size: 21px;
+
+}
+
+.logo:hover{/*CUANDO PASE EL CURSOR CAMBIE DE COLOR*/
+    background-color: rgb(61, 55, 55);
+}
+
+.foto{/*foto del avatar de INCIO DE SESION*/
+    height: 35px;
+    width: 35px;
+    border-radius: 100px;
+}
+
+
+@media screen and (max-width: 992px) {
+    #videos{
+        grid-gap:7px;
+      
+        display: grid;
+        grid-template-columns: repeat(2, .5fr);
+
+    }
+   aside{
+    
+   }
+    }
+@media screen and {
+    
+}
