@@ -6,7 +6,7 @@
 
 
 #pagina{/*EL PRIMER DIV QUE ENCIERRA TODO*/
-    background-color: black;
+    background-color: rgb(14, 12, 14);
     margin: 0;
     width: 100%;
     min-height: 100vh;
@@ -19,7 +19,9 @@
     
 }
 
-
+#boton-menu:checked ~ aside{
+    width: 80px;
+}
 
 /*GRID AREAS DE #PAGINA*/
 /*menu lateral*/
